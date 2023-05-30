@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import {useEffect,useState} from 'react'
+import axios from 'axios'
+import Content from './Content'
 import './App.css';
 
 function App() {
+  const [data, setData] = useState(null)
+  useEffect(() => {
+    axios.get('https://server-iot-410.onrender.com/home-bong')
+    .then((response) => {
+        setData(response.data)
+    })
+  }, []) 
+if (!data) 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <div>
+      <h1 className='title'> PHÒNG 410</h1>
+    <div className='loadding'>
+      <div className="loader"></div>
+      <h1>Loadding...!</h1>
     </div>
+  </div>
+  )
+
+  return (
+    <div>
+      <Content props= {data}/>
+    </div>
+    
   );
 }
 
