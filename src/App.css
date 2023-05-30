@@ -1,4 +1,7 @@
-
+.app {
+  width: 100vw;
+  height: 100vh;
+}
 .app_item {
   margin: 2rem;
 }
@@ -47,10 +50,11 @@
   position: relative;
 }
 .notice {
+  top: 200px;
   position: absolute;
   background-color: rgb(251, 248, 248);
   width: 50%;
-  height: 25%;
+  height: 30%;
   margin-left: 25%;
   border-radius: 10px;
   border: solid 1px #333;
@@ -73,9 +77,11 @@
 .notice_active {
   display: flex;
   justify-content: center;
+  align-items: center;
    background-color: rgb(30, 246, 6);
    width: 80px;
-   border-radius: 20px;
+   border-radius: 999990px;
+   height: 80px;
 
 }
 .notice_n {
@@ -112,7 +118,7 @@
     top: 200px;
     margin: 20px;
     width: 90%;
-    height: 20%;
+    height: 25%;
   }
   .logo {
     width: 30%;

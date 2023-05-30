@@ -52,7 +52,6 @@ function Content(props) {
         axios.put('https://server-iot-410.onrender.com/home-bong/646ae777e54cdf932ac520a2',dataUpdate)
         .then((response) => {
             setData(response.data)
-            console.log(response.data)
         })
     }
     return ( 
